@@ -20,6 +20,19 @@ ESP_LM35::ESP_LM35(int pin, int resolutionBits)
     _analogReadMax = 2^resolutionBits;
 }
 
+void bind(int pin)
+{
+    _pin = pin;
+    analogReadResolution(12);
+    _analogReadMax = 4096;
+}
+void bind(int pin, int resolutionBits)
+{
+    _pin = pin;
+    analogReadResolution(resolutionBits);
+    _analogReadMax = 2^resolutionBits;
+}
+
 float ESP_LM35::tempC()
 {
     int val = analogRead(_pin);
@@ -60,6 +73,54 @@ double ESP_LM35::doubleTempF()
   return farh;
 }
 double ESP_LM35::doubleTempK()
+{
+    int val = analogRead(_pin);
+    double mv = (val/(double)_analogReadMax)*5000;
+    double cel = mv/10;
+    double kel = cel-273.15;
+    return kel;
+}
+
+float tempC()
+{
+    int val = analogRead(_pin);
+    float mv = (val/(float)_analogReadMax)*5000;
+    float cel = mv/10;
+    return cel;
+}
+float tempF()
+{
+    int val = analogRead(_pin);
+    float mv = (val/(float)_analogReadMax)*5000;
+    float cel = mv/10;
+    float farh = (cel*9)/5 + 32;
+  return farh;
+}
+float tempK()
+{
+    int val = analogRead(_pin);
+    float mv = (val/(float)_analogReadMax)*5000;
+    float cel = mv/10;
+    float kel = cel-273.15;
+    return kel;
+}
+
+double doubleTempC()
+{
+    int val = analogRead(_pin);
+    double mv = (val/(double)_analogReadMax)*5000;
+    double cel = mv/10;
+    return cel;
+}
+double doubleTempF()
+{
+    int val = analogRead(_pin);
+    double mv = (val/(double)_analogReadMax)*5000;
+    double cel = mv/10;
+    double farh = (cel*9)/5 + 32;
+  return farh;
+}
+double doubleTempK()
 {
     int val = analogRead(_pin);
     double mv = (val/(double)_analogReadMax)*5000;

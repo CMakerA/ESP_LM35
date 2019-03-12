@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ESP_LM35	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+tempC	KEYWORD2
+tempF	KEYWORD2
+tempK	KEYWORD2
+doubleTempC	KEYWORD2
+doubleTeempF	KEYWORD2
+doubleTeempK	KEYWORD2
+
+######################################
+# Constants (LITERAL1)
+#######################################

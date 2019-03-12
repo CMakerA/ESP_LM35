@@ -14,6 +14,20 @@ class ESP_LM35
     ESP_LM35(int pin);
     ESP_LM35(int pin, int resolutionBits);
 
+    float tempC();
+    float tempF();
+    float tempK();
+
+    double doubleTempC();
+    double doubleTempF();
+    double doubleTempK();
+  private:
+    int _pin;
+    int _analogReadMax;
+};
+class ESP_LM35b
+{
+  public:
     void bind(int pin);
     void bind(int pin, int resolutionBits);
 

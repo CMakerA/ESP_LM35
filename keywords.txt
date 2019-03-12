@@ -7,10 +7,12 @@
 #######################################
 
 ESP_LM35	KEYWORD1
+ESP_LM35b	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
+bind	KEYWORD2
 tempC	KEYWORD2
 tempF	KEYWORD2
 tempK	KEYWORD2
